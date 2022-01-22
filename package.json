@@ -1,0 +1,26 @@
+{
+  "name": "usb-mern-skeleton",
+  "version": "1.0.0",
+  "description": "My First MERN web application",
+  "main": "template.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bienvenuushindi/MERN-SKELETON.git"
+  },
+  "keywords": [
+    "react",
+    "mongodb",
+    "express",
+    "node",
+    "mern"
+  ],
+  "author": "ushindi bienvenu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bienvenuushindi/MERN-SKELETON/issues"
+  },
+  "homepage": "https://github.com/bienvenuushindi/MERN-SKELETON#readme"
+}
