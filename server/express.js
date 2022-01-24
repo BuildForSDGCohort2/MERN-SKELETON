@@ -1,4 +1,5 @@
 import express from 'express';
+import userRoutes from './routes/user.routes'
 import Template from './../template';
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -13,6 +14,7 @@ app.use(cookieParser())
 app.use(compress())
 app.use(helmet())
 app.use(cors())
+app.use('/', userRoutes)
 app.get('/', (req, res) => {
 res.status(200).send(Template())
 })
