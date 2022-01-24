@@ -1,0 +1,20 @@
+{
+  "files": {
+    ".replit": [
+      {
+        "id": "f18019fd-f72a-4297-9116-00346f02e0e2",
+        "line": 1,
+        "version": 33,
+        "index": 0
+      }
+    ],
+    "server/helpers/dbErrorHandler.js": [
+      {
+        "id": "1d1d2763-4aaa-4d1e-a043-e771fc6c3adb",
+        "line": 20,
+        "version": 5,
+        "index": 416
+      }
+    ]
+  }
+}

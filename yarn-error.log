@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/local/bin/node /opt/yarn-v1.22.5/bin/yarn.js init
+
+PATH: 
+  /nix/store/r984vadc1xpr6gyd7qr6rfg55kirh122-pid1-0.0.0-02a4b21/bin:/nix/store/1d14fcwp2z64wmmr5jpfa1m5zay0n9fq-silver-searcher-2.2.0/bin:/nix/store/pcr60c6n4hcxqbaqvqv2ly6ihcnvn8f5-bash/bin:/nix/store/0vkw1m51q34dr64z5i87dy99an4hfmyg-coreutils-8.32/bin:/nix/store/ng35kcfzm03fdmp97nc2dxi63jv41sca-vscode-cpptools-dap-1.3.1/bin:/nix/store/n578yqf36hxxs6nhcwq35gkqhv2b00cl-replit-python-dap-wrapper-1.0.0/bin:/nix/store/knvdqxr2xkp73bb1xzl6a0i3rqnvycay-node-dap/bin:/nix/store/yzr5fybypw977fxnqj3gsp3gznh1lbm2-fluxbox/bin:/nix/store/vfnpx0k26ilwv3p2x8rdf0an5llpdmjw-prybar-nodejs-0.0.0-02c7adf/bin:/nix/store/7bf2l1b07vj9m9p1fn4g64h5sba2i9ls-pulseaudio-14.2/bin:/nix/store/8cpkwghsa1crf84x7155pnsx5xjqyzsz-rfbproxy-0.0.0-b81eb2f/bin:/nix/store/fy1vhp96i11ng6mwbr0l5apj68c64lgr-tigervnc-1.11.0/bin:/nix/store/mjbrcsjhn4smd1jdl4nkywpvzdyfcd14-upm-0.0.0-98447b2/bin:/nix/store/3hny06xvqvc4irdnknk732a2km9b93rq-xwininfo-1.1.4/bin:/nix/store/10c49axvzlavn6h3kwg6z1l5ha6f9cg0-replbox/bin:/home/runner/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.22.6
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/runner/OpenSuddenGame/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /opt/yarn-v1.22.5/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/opt/yarn-v1.22.5/lib/cli.js:310:30)
+      at /opt/yarn-v1.22.5/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  

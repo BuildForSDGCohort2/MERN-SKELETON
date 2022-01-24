@@ -1,0 +1,15 @@
+/*Setting targets.node to current instructs Babel to compile against the current
+version of Node and allows us to use expressions such as async/await in our
+backend code.*/
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
+}
