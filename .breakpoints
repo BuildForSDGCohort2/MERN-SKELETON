@@ -11,9 +11,9 @@
     "server/helpers/dbErrorHandler.js": [
       {
         "id": "1d1d2763-4aaa-4d1e-a043-e771fc6c3adb",
-        "line": 20,
-        "version": 5,
-        "index": 416
+        "line": 34,
+        "version": 15,
+        "index": 775
       }
     ]
   }
