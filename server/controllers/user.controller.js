@@ -1,8 +1,8 @@
 import User from '../models/user.model'
 import extend from 'lodash/extend'
-import errorHandler from './error.controller'
+import errorHandler from  './../helpers/dbErrorHandler'
 
-const create = (req, res, next) => {
+const create = async (req, res, next) => {
 
   const user = new User(req.body)
   try {
@@ -17,7 +17,7 @@ const create = (req, res, next) => {
 
   }
 }
-const list = (req, res) => {
+const list = async (req, res) => {
   try {
     let users = await User.find().select('name email updated created')
     res.json(users)
@@ -27,7 +27,7 @@ const list = (req, res) => {
     })
   }
 }
-const userByID = (req, res, next, id) => {
+const userByID = async (req, res, next, id) => {
   try {
     let user = await User.findById(id)
     if (!user)
@@ -45,9 +45,10 @@ const userByID = (req, res, next, id) => {
 const read = (req, res) => {
   req.profile.hashed_password = undefined
   req.profile.salt = undefined
+  req.profile.__v = undefined
   return res.json(req.profile)
 }
-const update = (req, res, next) => {
+const update = async (req, res, next) => {
   try {
     let user = req.profile
     user = extend(user, req.body)
@@ -62,7 +63,7 @@ const update = (req, res, next) => {
     })
   }
 }
-const remove = (req, res, next) => {
+const remove =async (req, res, next) => {
   try {
     let user = req.profile
     let deletedUser = await user.remove()

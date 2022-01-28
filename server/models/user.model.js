@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-
+const crypto = require('crypto');
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,25 +17,36 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  updated: Date,
+  updated: {
+    type: Date
+  },
   hashed_password: {
     type: String,
-    required: "Password is required"
+    required: "Password field is required"
   },
   salt: String
 })
-UserSchema
-  .virtual('password')
-  .set(function(password) {
+userSchema
+  .virtual("password").set(function(password) {
+    console.log(password)
     this._password = password
     this.salt = this.makeSalt()
-    this.hashed_password = this.encryptPassword(password)
-  })
-  .get(function() {
+    this.hashed_password =this.encryptPassword(password)
+    console.log(this.hashed_password)
+  }).get(function() {
     return this._password
   })
 
-UserSchema.methods = {
+userSchema.path('hashed_password').validate(function(v) {
+  if (this._password && this._password.length < 6) {
+    this.invalidate('password', 'Password must be at least 6 characters.')
+  }
+  if (this.isNew && !this._password) {
+    this.invalidate('password', 'Password is not valid ')
+  }
+}, null)
+
+userSchema.methods = {
   authenticate: function(plainText) {
     return this.encryptPassword(plainText) === this.hashed_password
   },
@@ -46,17 +57,10 @@ UserSchema.methods = {
     } catch (err) {
       return ''
     }
-  }, makeSalt: function() {
+  },
+  makeSalt: function() {
     return Math.round((new Date().valueOf() * Math.random())) + ''
   }
 }
-UserSchema.path('hashed_password').validate(function(v) {
-  if (this._password && this._password.length < 6) {
-    this.invalidate('password', 'Password must be at least 6 characters.')
-  }
-  if (this.isNew && !this._password) {
-    this.invalidate('password', 'Password is required')
-  }
-}, null)
 
 export default mongoose.model('User', userSchema);
